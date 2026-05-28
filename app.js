@@ -13,7 +13,7 @@ let tasks = [
                 {
                     id: 1,
                     taskName: "CA1 Submission",
-                    deadline: "2026-05-20",
+                    deadline: "2025-05-20",
                     module: "C237",
                     condition: "Pending"
                 },
