@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+    <div class="container mt-4">
+        <h2>Tasks Due on <%= selectedDeadline %></h2>
+
+        <table class="table table-bordered table-striped mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th>Task Name</th>
+                    <th>Module</th>
+                    <th>Priority</th>
+                    <th>Condition</th>
+                    <th>Sleep Hours</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% itemsByDeadline.forEach(function(task) { %>
+                    <tr>
+                        <td><%= task.taskName %></td>
+                        <td><%= task.module %></td>
+                        <td><%= task.priority %></td>
+                        <td><%= task.condition %></td>
+                        <td><%= task.sleepHours %> hrs</td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+
+        <a href="/summary" class="btn btn-secondary">Back to Summary</a>
+    </div>
+</body>
+</html>
